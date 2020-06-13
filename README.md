@@ -8,7 +8,7 @@ I've started this project as a hobby to learn a little bit of docker and GitHub 
 Create a container with a MySQL instance
 
 ```
-docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -d mysql
+docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -d mariadb
 ```
 
 Create the GLPI container
@@ -22,7 +22,7 @@ This should be used when running production environments
 
 Create a container with a MySQL instance with a shared volume
 ```
-docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi --volume <localpath>:/var/lib/mysql -d mysql
+docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -v <localpath>:/var/lib/mysql -d mariadb
 ```
 
 Create the GLPI container linked with the MySQL
