@@ -1,5 +1,5 @@
 # GLPI on Docker
-## Why another docker container
+## Yet another docker container
 I've started this project as a hobby to learn a little bit of docker and GitHub management. I've based all my work on a container from [diouxx](https://hub.docker.com/u/diouxx) 
 
 # How to use
