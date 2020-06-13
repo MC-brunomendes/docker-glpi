@@ -1,3 +1,10 @@
+[![Docker Builds](https://img.shields.io/docker/cloud/build/brusilva/glpi.svg?&logo=docker)](https://hub.docker.com/r/brusilva/glpi)
+[![Docker Build Status](https://img.shields.io/docker/automated/brusilva/glpi.svg?&logo=docker)](https://hub.docker.com/r/brusilva/glpi)
+[![Docker Pulls](https://img.shields.io/docker/pulls/brusilva/glpi.svg?&logo=docker)](https://hub.docker.com/r/brusilva/glpi)
+[![Docker Stars](https://img.shields.io/docker/stars/brusilva/glpi.svg?&logo=docker)](https://hub.docker.com/r/brusilva/glpi)
+[![GitHub Release](https://img.shields.io/github/release/MC-brunomendes/docker-glpi.svg?&logo=github)](https://github.com/MC-brunomendes/docker-glpi/releases)
+
+
 # GLPI on Docker
 ## Yet another docker container
 I've started this project as a hobby to learn a little bit of docker and GitHub management. I've based all my work on a container from [diouxx](https://hub.docker.com/u/diouxx) 
