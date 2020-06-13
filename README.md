@@ -7,7 +7,7 @@
 
 # GLPI on Docker
 ## Yet another docker container
-I've started this project as a hobby to learn a little bit of docker and GitHub management. I've based all my work on a container from [diouxx](https://hub.docker.com/u/diouxx) 
+I've started this project as a hobby to learn a little bit of docker and GitHub management. I've based all my work and learning I've got from a container created by [diouxx](https://hub.docker.com/u/diouxx) 
 
 # How to use
 ## Running with no persistence data
