@@ -5,7 +5,7 @@ I've started this project as a hobby to learn a little bit of docker and GitHub 
 # How to use
 ## Running with no persistence data
 
-Create a container with a MySql instance
+Create a container with a MySQL instance
 
 ```
 docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -d mysql
