@@ -25,6 +25,9 @@ then
                 tar -xzf ${FOLDER_WEB}${TAR_GLPI} -C ${FOLDER_WEB}
                 rm -Rf ${FOLDER_WEB}${TAR_GLPI}
                 chown -R www-data:www-data ${FOLDER_WEB}${FOLDER_GLPI}
+                #runing database update procedures --- NEEDS TESTING
+                echo "Runing database update"
+                php ${FOLDER_WEB}${FOLDER_GLPI}/bin/console glpi:database:update
         fi
 
 else
