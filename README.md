@@ -45,3 +45,7 @@ Please note that currently the GLPI team published [version 9.5.0-Rc1](https://f
 ```
 docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi  -p 80:80 --env "VERSION_GLPI=9.4.6" -d brusilva/glpi
 ```
+
+## Special considerations
+- If you run this docker in production please change de default passwords provided when creating the containers, specially the MySQL passwords.
+- When installing GLPI for the first time on the DB setup you can just use "mysql" as the server address. This is because we've used the legacy --link switch when creating the GLPI container which means name resolution is enable between this two containers without having to create another docker network. More information about this can be found [here](https://docs.docker.com/network/bridge/)
