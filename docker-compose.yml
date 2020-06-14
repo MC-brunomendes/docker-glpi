@@ -1,0 +1,20 @@
+version: "2"
+
+services: 
+    #MySQL DB
+    db-mysql:
+        image: mariadb
+        container_name: mysql
+        hostname: db-mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=r00tpassw20rd
+            - MYSQL_DATABASE=glpidb
+            - MYSQL_USER=glpi_user
+            - MYSQL_PASSWORD=glpi
+    glpi:
+        image: brusilva/glpi
+        container_name: app-glpi
+        hostname: glpi
+        ports:
+            - "80:80"
+ 
