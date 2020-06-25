@@ -37,6 +37,11 @@ Create the GLPI container linked with the MySQL
 ```
 docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi  -p 80:80 -d brusilva/glpi --user "$(id -u):$(id -g)"
 ```
+### If you wish to run GLPI only with plugins dir and files as persistence you should run the container like this:
+```
+docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi/plugins --volume <localpath>:/var/www/html/glpi/files  -p 80:80 -d brusilva/glpi
+```
+
 
 
 ## Forcing GLPI Version
