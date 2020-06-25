@@ -15,13 +15,13 @@ I've started this project as a hobby to learn a little bit of docker and GitHub 
 Create a container with a MySQL instance
 
 ```
-docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -d mariadb
+docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -d mariadb --user "$(id -u):$(id -g)"
 ```
 
 Create the GLPI container
 
 ```
-docker run --name app-glpi --link db-mysql:mysql -p 80:80 -d brusilva/glpi
+docker run --name app-glpi --link db-mysql:mysql -p 80:80 -d brusilva/glpi --user "$(id -u):$(id -g)"
 ```
 
 ## Running with persistence data
@@ -29,13 +29,13 @@ This should be used when running production environments
 
 Create a container with a MySQL instance with a shared volume
 ```
-docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -v <localpath>:/var/lib/mysql -d mariadb
+docker run --name db-mysql -e MYSQL_DATABASE=glpidb -e MYSQL_ROOT_PASSWORD=r00tpassw20rd  -e MYSQL_USER=glpi_user -e MYSQL_PASSWORD=glpi -v <localpath>:/var/lib/mysql -d mariadb --user "$(id -u):$(id -g)"
 ```
 
 Create the GLPI container linked with the MySQL
 
 ```
-docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi  -p 80:80 -d brusilva/glpi
+docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi  -p 80:80 -d brusilva/glpi --user "$(id -u):$(id -g)"
 ```
 
 
@@ -43,7 +43,7 @@ docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/h
 Please note that currently the GLPI team published [version 9.5.0-Rc1](https://forum.glpi-project.org/viewtopic.php?id=278487) which still is a RC and therefore has many bugs. I suggest you force the version to version 9.4.6 that is the latest stable version avaiable
 
 ```
-docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi  -p 80:80 --env "VERSION_GLPI=9.4.6" -d brusilva/glpi
+docker run --name app-glpi --link db-mysql:mysql --volume <localpath>:/var/www/html/glpi  -p 80:80 --env "VERSION_GLPI=9.4.6" -d brusilva/glpi --user "$(id -u):$(id -g)"
 ```
 
 ## Docker Compose
