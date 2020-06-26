@@ -12,6 +12,8 @@ php-ldap \
 php-xmlrpc \
 php-imap \
 curl \
+php-zip \
+php-bz2 \
 php-curl \
 php-gd \
 php-mbstring \
