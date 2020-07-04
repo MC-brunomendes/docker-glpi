@@ -1,4 +1,6 @@
 #!/bin/bash
+usermod -u 1000 www-data
+groupmod -g 1000 www-data
 [[ ! "$VERSION_GLPI" ]] \
         && VERSION_GLPI=$(curl -s https://api.github.com/repos/glpi-project/glpi/releases/latest | grep tag_name | cut -d '"' -f 4)
 PHP_VERSION=$(php -v | tac | tail -n 1 | cut -d " " -f 2 | cut -c 1-3)
